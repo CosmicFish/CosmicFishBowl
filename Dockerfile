@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-MAINTAINER Marco Raveri
+MAINTAINER Marco Raveri <mraveri@sissa.it>
 
 # install the initial things:
 RUN apt-get update && apt-get install -y \
@@ -15,9 +15,32 @@ RUN apt-get update && apt-get install -y \
      flex \
      bison \
      numdiff \
+     doxygen \
+     wget \
  && apt-get clean
 
-​# install gfortran 5
-RUN add-apt-repository ppa:ubuntu-toolchain-r/test -y \
-     && apt-get update -y \
-     && apt-get install -y gcc-5 g++-5 gfortran-5
+# install latex:
+RUN apt-get update \
+     && apt-get install -y \
+     texlive \
+     dvipng \
+     texlive-latex-extra \
+     texlive-fonts-recommended \
+&& apt-get clean
+
+# install python:
+RUN apt-get update \
+     && apt-get install \
+     python-pip \
+     python-dev \
+     python-numpy \
+     python-matplotlib \
+     python-scipy \
+     python-pandas \
+     cython \
+     ipython \
+     python-sphinx \
+&& apt-get clean
+
+RUN pip install nosetests \
+    && pip install coverage
