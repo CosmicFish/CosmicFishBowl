@@ -30,7 +30,7 @@ RUN apt-get update \
 
 # install python:
 RUN apt-get update \
-     && apt-get install \
+     && apt-get install -y \
      python-pip \
      python-dev \
      python-numpy \
