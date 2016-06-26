@@ -42,4 +42,5 @@ RUN apt-get update \
      python-sphinx \
 && apt-get clean
 
-RUN pip install nosetests
+RUN pip install nose \
+    && pip install coverage
