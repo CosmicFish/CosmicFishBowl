@@ -41,3 +41,5 @@ RUN apt-get update \
      ipython \
      python-sphinx \
 && apt-get clean
+
+RUN pip install nosetests
