@@ -43,4 +43,5 @@ RUN apt-get update \
 && apt-get clean
 
 RUN pip install nose \
-    && pip install coverage
+    && pip install coverage \
+    && pip install jupyter
