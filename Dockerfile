@@ -42,6 +42,10 @@ RUN apt-get update \
      python-sphinx \
 && apt-get clean
 
-RUN pip install nose \
+RUN pip install --upgrade pip \
+    && pip uninstall -y IPython \
+    && pip install ipython==3.2.1 \
+    && pip install nose \
     && pip install coverage \
-    && pip install jupyter
+    && pip install jupyter \
+    && pip install jsonschema
