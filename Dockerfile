@@ -31,8 +31,8 @@ RUN apt-get update \
 # install python:
 RUN apt-get update \
      && apt-get install -y \
-     python-pip \
-     python-dev \
+     python3.8-pip \
+     python3.8-dev \
      python-numpy \
      python-matplotlib \
      python-scipy \
@@ -44,7 +44,7 @@ RUN apt-get update \
 
 RUN pip install --upgrade pip \
     && pip uninstall -y IPython \
-    && pip install ipython==3.2.1 \
+    && pip install ipython \
     && pip install nose \
     && pip install coverage \
     && pip install jupyter \
