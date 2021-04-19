@@ -2,6 +2,8 @@ FROM ubuntu:latest
 
 MAINTAINER Marco Raveri <mraveri@sissa.it>
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # install the initial things:
 RUN apt-get update && apt-get install -y \
      make \
