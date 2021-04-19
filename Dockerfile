@@ -33,15 +33,15 @@ RUN apt-get update \
 # install python:
 RUN apt-get update \
      && apt-get install -y \
-     python3.8-pip \
-     python3.8-dev \
-     python-numpy \
-     python-matplotlib \
-     python-scipy \
-     python-pandas \
+     python3-pip \
+     python3.7 \
+     python3-numpy \
+     python3-matplotlib \
+     python3-scipy \
+     python3-pandas \
      cython \
      ipython \
-     python-sphinx \
+     python3-sphinx \
 && apt-get clean
 
 RUN pip install --upgrade pip \
